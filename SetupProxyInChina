@@ -13,6 +13,6 @@ proxy_dns
 tcp_read_time_out 15000
 tcp_connect_time_out 8000
 [ProxyList]
-socks5 127.0.0.1 9808' | sudo tee /etc/proxychains4.conf > /dev/null
+socks5 127.0.0.1 9909' | sudo tee /etc/proxychains4.conf > /dev/null
 
 echo "Proxy Setting Success!"
