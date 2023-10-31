@@ -13,10 +13,10 @@ from tqdm import tqdm
 class InputDialog(Toplevel):
     def __init__(self, parent):
         Toplevel.__init__(self, parent)
-        self.title("请输入包含链接的字符串~喵~")
+        self.title("请输入包含链接的字符串")
         self.text = Text(self, width=80, height=20)
         self.text.pack()
-        self.button = Button(self, text="确定~喵~", command=self.ok)
+        self.button = Button(self, text="确定", command=self.ok)
         self.button.pack()
 
     def ok(self):
@@ -36,9 +36,9 @@ def download_file(url, file_path):
                     f.write(data)
             t.close()
             if total_size != 0 and t.n != total_size:
-                print("ERROR, something went wrong~喵~")
+                print("ERROR, something went wrong")
     except Exception as e:
-        print(f"Failed to download {url} to {file_path} due to {str(e)}~喵~")
+        print(f"Failed to download {url} to {file_path} due to {str(e)}~")
 
 root = Tk()
 root.withdraw()
@@ -70,7 +70,7 @@ for url in urls:
             os.makedirs(os.path.dirname(file_path))
         except OSError as exc: # Guard against race condition
             if exc.errno != errno.EEXIST:
-                print(f"Failed to create directory due to {str(exc)}~喵~")
+                print(f"Failed to create directory due to {str(exc)}~")
                 continue
                 
     threading.Thread(target=download_file, args=(url, file_path)).start()
