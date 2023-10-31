@@ -32,10 +32,10 @@ class App:
         self.start_button = Button(master, text="开始", command=self.start_download)
         self.start_button.grid(row=2, column=0)
 
-        # self.pause_button = Button(master, text="暂停~喵~", command=self.pause_download)
+        # self.pause_button = Button(master, text="暂停", command=self.pause_download)
         # self.pause_button.grid(row=2, column=1)
         #
-        # self.stop_button = Button(master, text="停止~喵~", command=self.stop_download)
+        # self.stop_button = Button(master, text="停止", command=self.stop_download)
         # self.stop_button.grid(row=2, column=2)
 
         self.progress_label = Label(master, text="下载进度：")
@@ -71,14 +71,14 @@ class App:
                 filename = "downloaded_file" + (ext if ext else "")
         file_path = os.path.join(download_dir, filename)
         if os.path.exists(file_path):
-            if not messagebox.askyesno("文件已存在~喵~", f"文件 '{filename}' 已存在，链接：'{url}'。是否替换？"):
+            if not messagebox.askyesno("文件已存在~", f"文件 '{filename}' 已存在，链接：'{url}'。是否替换？"):
                 return
         if not os.path.exists(os.path.dirname(file_path)):
             try:
                 os.makedirs(os.path.dirname(file_path))
             except OSError as exc:
                 if exc.errno != errno.EEXIST:
-                    print(f"Failed to create directory due to {str(exc)}~喵~")
+                    print(f"Failed to create directory due to {str(exc)}~")
                     return
         with requests.get(url, stream=True) as r:
             r.raise_for_status()
