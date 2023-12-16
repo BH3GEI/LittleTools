@@ -1,4 +1,4 @@
-decimal_values = [32472, 22270, 26085, 24535, 65292, 21452, 20987, 21487, 20197, 26597, 30475, 35814, 32454, 21382, 21490, 35760, 24405]
+decimal_values = [27979, 35797]
 
 text = ''.join(chr(decimal) for decimal in decimal_values)
 
