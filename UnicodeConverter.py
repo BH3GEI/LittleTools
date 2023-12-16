@@ -4,7 +4,7 @@ text = ''.join(chr(decimal) for decimal in decimal_values)
 
 print(text)
 
-chinese_text = '你可以看，和操作能以观看详细历史记录'
+chinese_text = '测试'
 
 decimal_values = [ord(char) for char in chinese_text]
 
