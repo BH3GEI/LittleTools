@@ -18,7 +18,7 @@ RestartSec=10
 [Install]
 WantedBy=default.target
 EOF
-
+echo "c.NotebookApp.notebook_dir = '/mnt/c/Users/BH3GEI/Desktop/JupyterProjects'" >> ~/.jupyter/jupyter_notebook_config.py
 # 重新加载服务配置
 systemctl --user daemon-reload
 
